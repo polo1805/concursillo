@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ConcursoComponent } from "./pages/concurso/concurso.component";
 
 @Component({
   selector: 'app-root',
