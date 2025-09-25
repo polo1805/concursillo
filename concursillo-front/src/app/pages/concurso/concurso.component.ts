@@ -10,13 +10,18 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './concurso.component.css'
 })
 export class ConcursoComponent {
-  preguntasFaciles : any[] = [];
+  preguntas : any[] = [];
   constructor(private apiService: ApiService){}
   ngOnInit(): void {
-    this.apiService.getPreguntas().subscribe((data) => {
-      this.preguntasFaciles = data.results;
-      console.log(this.preguntasFaciles);
-    });
+    this.apiService.getPreguntas().subscribe({
+      
+      next:(data)=>{
+        console.log(data);
+      },
+      error:(error)=>{
+        console.error('Error fetching preguntas:', error);
+      }
+    })
   }
 
 }

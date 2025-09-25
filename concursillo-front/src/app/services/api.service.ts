@@ -9,6 +9,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getPreguntas(): Observable<any> {
+    console.log('Fetching preguntas...'); 
     return this.http.get('http://localhost:8000/preguntas.php');
   }
 }
